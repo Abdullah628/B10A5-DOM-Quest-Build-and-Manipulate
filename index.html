@@ -17,9 +17,9 @@
       <nav class="bg-[#F9F7F3] h-32">
         <div class="navbar w-10/12 pt-5 mx-auto">
           <div class="navbar-start">
-            <button class="btn w-32 bg-[#B4F461]">Blog</button>
+            <button class="py-2 px-4 rounded-md border w-32 bg-[#B4F461]">Blog</button>
           </div>
-          <div class="navbar-center">
+          <div class="navbar-center p-2">
             <a class="btn btn-ghost text-xl"
               ><img src="./assets/logo.png" alt="" />Donate Bangladesh</a
             >
@@ -34,15 +34,15 @@
       <div class="hero">
         <div class="hero-content text-center">
           <div class="max-w-md mt-10 flex gap-6">
-            <button class="btn bg-[#B4F461]">Donation</button>
-            <button class="btn">History</button>
+            <button id="donation-btn" class="py-2 px-4 rounded-md border bg-[#B4F461]">Donation</button>
+            <button id="history-btn" class="py-2 px-4 rounded-md border">History</button>
           </div>
         </div>
       </div>
     </header>
 
     <main>
-      <div class="donation ">
+      <div id="donation-part" class=" ">
         <div class="hero w-9/12 mx-auto shadow-md border rounded-lg">
           <div class="hero-content flex-col lg:flex-row">
             <img
@@ -142,7 +142,7 @@
         </div>
       </div>
 
-      <div class="hidden history w-9/12 mx-auto mt-4 ">
+      <div id="history-part" class="hidden w-9/12 mx-auto mt-4 ">
         <div class="border p-6 rounded-md">
           <h1 class="text-md font-bold mb-2">
             96500 Taka is Donated for famine-2024 at Feni, Bangladesh
@@ -162,7 +162,7 @@
     </main>
     <footer></footer>
 
-
+    <script src="js/toggle.js"></script>
     
   </body>
 </html>
