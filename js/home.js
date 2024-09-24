@@ -85,5 +85,6 @@ document
   });
 
   document.getElementById("blog-btn").addEventListener("click", function () {
-    window.location.href = "blog.html";
+    window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/blog.html');
+
   });
