@@ -8,19 +8,27 @@ function addHistory(donationName, amount) {
           <h1 class="text-md font-bold mb-2">
             ${amount} ${donationName}
           </h1>
-          <p class="text-sm text-[#808080]">${date.toString()}</p>
+          <p class="text-sm text-[#808080]">Date: ${date.toString()}</p>
         </div>
     `;
 
   document.getElementById("history-part").appendChild(div);
 }
 
+function updateFund(idName, donation){
+    let fund = parseFloat(document.getElementById(idName).innerText);
+
+    fund += donation;
+    totalAmount -= donation;
+
+    document.getElementById(idName).innerText = fund;
+    document.getElementById("total-amount").innerText = totalAmount;
+}
+
 document
   .getElementById("noakhali-donation-btn")
   .addEventListener("click", function () {
-    let noakhaliFund = parseFloat(
-      document.getElementById("noakhali-fund").innerText
-    );
+    
     const noakhaliDonation = parseFloat(
       document.getElementById("noakhali-donation").value
     );
@@ -28,16 +36,12 @@ document
       "noakhali-donation-name"
     ).innerText;
 
-    if (isNaN(noakhaliDonation) || noakhaliDonation < 0) {
+    if (isNaN(noakhaliDonation) || noakhaliDonation < 0 || noakhaliDonation > totalAmount) {
       alert("Invalid input !!");
       return;
     }
 
-    noakhaliFund += noakhaliDonation;
-    totalAmount -= noakhaliDonation;
-
-    document.getElementById("noakhali-fund").innerText = noakhaliFund;
-    document.getElementById("total-amount").innerText = totalAmount;
+    updateFund("noakhali-fund", noakhaliDonation);
 
     addHistory(nokhaliDonationName, noakhaliDonation);
     document.getElementById("openModal").click();
@@ -46,23 +50,18 @@ document
 document
   .getElementById("feni-donation-btn")
   .addEventListener("click", function () {
-    let feniFund = parseFloat(document.getElementById("feni-fund").innerText);
     const feniDonation = parseFloat(
       document.getElementById("feni-donation").value
     );
     const feniDonationName =
       document.getElementById("feni-donation-name").innerText;
 
-    if (isNaN(feniDonation) || feniDonation < 0) {
+    if (isNaN(feniDonation) || feniDonation < 0 || feniDonation > totalAmount) {
       alert("Invalid input !!");
       return;
     }
 
-    feniFund += feniDonation;
-    totalAmount -= feniDonation;
-
-    document.getElementById("feni-fund").innerText = feniFund;
-    document.getElementById("total-amount").innerText = totalAmount;
+    updateFund("feni-fund", feniDonation);
 
     addHistory(feniDonationName, feniDonation);
     document.getElementById("openModal").click();
@@ -70,28 +69,18 @@ document
 
 document
   .getElementById("quota-donation-btn")
-  .addEventListener("click", function (e) {
-    let quotaFund = parseFloat(document.getElementById("quota-fund").innerText);
-    const quotaDonation = parseFloat(
-      document.getElementById("quota-donation").value
-    );
-    const quotaDonationName = document.getElementById(
-      "quota-donation-name"
-    ).innerText;
+  .addEventListener("click", function () {
+    const quotaDonation = parseFloat(document.getElementById("quota-donation").value);
+    const quotaDonationName = document.getElementById("quota-donation-name").innerText;
 
-    if (isNaN(quotaDonation) || quotaDonation < 0) {
+    if (isNaN(quotaDonation) || quotaDonation < 0 || quotaDonation > totalAmount) {
       alert("Invalid input !!");
       return;
     }
 
-    quotaFund += quotaDonation;
-    totalAmount -= quotaDonation;
-
-    document.getElementById("quota-fund").innerText = quotaFund;
-    document.getElementById("total-amount").innerText = totalAmount;
+    updateFund("quota-fund", quotaDonation);
 
     addHistory(quotaDonationName, quotaDonation);
-    e.preventDefault();
     document.getElementById("openModal").click();
   });
 

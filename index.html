@@ -13,11 +13,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header class="sticky top-0 bg-[#FFFFFF] z-50 ">
-      <nav class="bg-[#F9F7F3] h-32">
-        <div class="navbar w-10/12 pt-5 mx-auto">
-          <div class="navbar-start">
-            <button id="blog-btn" class="py-2 px-4 rounded-md border w-32 bg-[#B4F461]">
+    <header class="sticky top-0 bg-[#FFFFFF] z-50 w-full mb-6">
+      <nav class="bg-[#F9F7F3] border lg:h-32 m-auto w-full">
+        <div class="navbar lg:w-10/12 pt-5 mx-auto flex flex-col lg:flex-row gap-2">
+          <div class="lg:navbar-start">
+            <button id="blog-btn" class="py-2 px-4 rounded-md w-32 bg-[#B4F461]">
               Blog
             </button>
           </div>
@@ -26,17 +26,17 @@
               ><img src="./assets/logo.png" alt="" />Donate Bangladesh</a
             >
           </div>
-          <div class="navbar-end gap-2">
+          <div class="lg:navbar-end gap-2">
             <img src="./assets/coin.png" alt="img" />
             <h4 id="total-amount">6500</h4>
             <p>BDT</p>
           </div>
         </div>
       </nav>
-
+    
       <div class="hero">
         <div class="hero-content text-center">
-          <div class="max-w-md mt-10 flex gap-6">
+          <div class="max-w-md mt-10 flex flex-col sm:flex-row gap-6">
             <button
               id="donation-btn"
               class="py-2 px-4 rounded-md border bg-[#B4F461]"
@@ -50,19 +50,19 @@
         </div>
       </div>
     </header>
-
+    
     <!-- main section start  -->
-
+    
     <main>
-      <div id="donation-part" class=" ">
-        <div class="hero w-9/12 mx-auto shadow-md border rounded-lg">
-          <div class="hero-content flex-col lg:flex-row">
+      <div id="donation-part" class="w-full">
+        <div class="hero lg:w-9/12 w-full mx-auto shadow-md border rounded-lg">
+          <div class="hero-content flex flex-col lg:flex-row gap-4 p-4">
             <img
               src="./assets/noakhali.png"
-              class="max-w-sm rounded-lg shadow-2xl"
+              class="max-w-full lg:max-w-sm rounded-lg shadow-2xl"
             />
             <div class="gap-3">
-              <div class="flex gap-2 bg-[#F9F7F3] p-2 w-4/12">
+              <div class="flex gap-2 bg-[#F9F7F3] p-2 w-full lg:w-4/12">
                 <img src="./assets/coin.png" alt="coinImg" />
                 <p id="noakhali-fund">100</p>
                 <p>BDT</p>
@@ -93,21 +93,21 @@
             </div>
           </div>
         </div>
-
-        <div class="hero w-9/12 mx-auto shadow-md border my-12 rounded-lg">
-          <div class="hero-content flex-col lg:flex-row">
+    
+        <div class="hero lg:w-9/12 w-full mx-auto shadow-md border my-12 rounded-lg">
+          <div class="hero-content flex flex-col lg:flex-row gap-4 p-4">
             <img
               src="./assets/feni.png"
-              class="max-w-sm rounded-lg shadow-2xl"
+              class="max-w-full lg:max-w-sm rounded-lg shadow-2xl"
             />
             <div class="gap-3">
-              <div class="flex gap-2 bg-[#F9F7F3] p-2 w-4/12">
+              <div class="flex gap-2 bg-[#F9F7F3] p-2 w-full lg:w-4/12">
                 <img src="./assets/coin.png" alt="coinImg" />
                 <p id="feni-fund">0</p>
                 <p>BDT</p>
               </div>
               <h1 id="feni-donation-name" class="text-md font-bold mb-2">
-                Donate for Flood Relief in Feni,Bangladesh
+                Donate for Flood Relief in Feni, Bangladesh
               </h1>
               <p class="mb-4">
                 The recent floods in Feni have devastated local communities,
@@ -129,15 +129,15 @@
             </div>
           </div>
         </div>
-
-        <div class="hero w-9/12 mx-auto shadow-md border rounded-lg">
-          <div class="hero-content flex-col lg:flex-row">
+    
+        <div class="hero lg:w-9/12 w-full mx-auto shadow-md border rounded-lg">
+          <div class="hero-content flex flex-col lg:flex-row gap-4 p-4">
             <img
               src="./assets/quota-protest.png"
-              class="max-w-sm rounded-lg shadow-2xl"
+              class="max-w-full lg:max-w-sm rounded-lg shadow-2xl"
             />
             <div class="gap-3">
-              <div class="flex gap-2 bg-[#F9F7F3] p-2 w-4/12">
+              <div class="flex gap-2 bg-[#F9F7F3] p-2 w-full lg:w-4/12">
                 <img src="./assets/coin.png" alt="coinImg" />
                 <p id="quota-fund">250</p>
                 <p>BDT</p>
@@ -167,11 +167,11 @@
           </div>
         </div>
       </div>
-
+    
       
-      <div id="history-part" class="hidden w-9/12 mx-auto mt-4"></div>
+      <div id="history-part" class="hidden w-full lg:w-9/12 mx-auto mt-4"></div>
     </main>
-    <footer></footer>
+    
 
     <!-- The button to open modal -->
     <a href="#my_modal_8" id="openModal" class="btn hidden">open modal</a>
