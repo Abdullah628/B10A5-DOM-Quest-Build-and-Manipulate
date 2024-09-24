@@ -84,6 +84,9 @@ document
     document.getElementById("openModal").click();
   });
 
+
+
+// routing configuration
   document.getElementById("blog-btn").addEventListener("click", function () {
     window.location.href = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/blog.html');
 
